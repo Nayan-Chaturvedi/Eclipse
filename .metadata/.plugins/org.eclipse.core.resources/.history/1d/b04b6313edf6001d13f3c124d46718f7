@@ -1,0 +1,30 @@
+package array_1_D;
+
+// Modification of OverFlow
+public class MissingNum_OptimizeApproch 
+{
+	public static int missingNum(int []a)
+	{
+		int sum=0;
+		int n=a.length;
+		System.out.println()n;
+		for(int i=1; i<=(n+1); i++)
+		{
+			sum+=i;
+			//sum-=a[1-i];
+			
+		}
+		
+		return sum;
+	}
+	public static void main(String[] args) 
+	{
+		int a[]= {1,2,3,5,6};
+		
+		int n=a.length;
+		
+		int result =missingNum(a);
+		
+		System.out.println("Missing number is : " + result);
+	}
+}

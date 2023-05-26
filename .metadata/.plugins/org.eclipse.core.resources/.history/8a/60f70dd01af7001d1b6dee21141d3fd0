@@ -1,0 +1,32 @@
+package rough;
+
+public class MissingNum_OptimizeApproch
+{
+	public static void missingNum(int a[])
+	{
+		int n=a.length;
+		int sum=0;
+		
+		for (int i = 0; i < n; i++) 
+		{
+			sum+=i;
+			sum-=a[i];
+		}
+		
+		System.out.println(sum);
+		
+//		for(int i=0; i<n; i++)
+//		{
+//			sum-a[i];
+//		}
+	}
+
+	public static void main(String[] args)
+	{
+		int a[]= {1,2,3,5};
+		
+		missingNum(a);
+
+	}
+
+}
