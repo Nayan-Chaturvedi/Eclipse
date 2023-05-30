@@ -1,0 +1,10 @@
+package recursion;
+
+public class A_Power_B_OptimizeApproch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

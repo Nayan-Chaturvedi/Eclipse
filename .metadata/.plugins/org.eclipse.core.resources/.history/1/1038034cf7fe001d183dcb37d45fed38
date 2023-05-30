@@ -1,0 +1,30 @@
+package recursion;
+
+import java.util.Scanner;
+
+public class AssignSoln_1 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc =new Scanner(System.in);
+		
+		System.out.println("Enter an number");
+		int n=sc.nextInt();
+		
+		sumOfDigits(n);
+
+	}
+	
+	public static int sumOfDigits(int n)
+	{
+		if(n==1)
+		{
+			return n;
+		}
+		else
+		{
+			return sumOfDigits(n-1) + ssumOfDigits(n-2)
+		}
+	}
+
+}
