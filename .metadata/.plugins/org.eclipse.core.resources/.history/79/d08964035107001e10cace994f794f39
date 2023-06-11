@@ -1,0 +1,43 @@
+package backtracking;
+
+public class PermutationOfString 
+{
+	public static String swap(String s, int left, int i)
+	{
+		char[] charArray=s.toCharArray();
+		
+		char temp = charArray[left];
+		charArray[left] = charArray[i];
+		charArray[i] = temp;
+		
+		return String.valueOf(charArray);
+		
+	}
+	public static void permute(String s, int left, int right)
+	{
+		if(left == right)
+		{
+			System.out.println(s);
+		}
+		else
+		{
+			for (int i = left; i <= right; i++)
+			{
+				s=swap(s, left, i);
+				permute(s, left+1, right);
+				
+				//backtracking
+				s=swap(s, left, i);
+			}
+		}
+	}
+
+
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		permute("ABC", 0, 2);
+	}
+
+}

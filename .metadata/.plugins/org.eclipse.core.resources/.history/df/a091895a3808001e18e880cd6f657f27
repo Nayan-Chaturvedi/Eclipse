@@ -1,0 +1,78 @@
+package backtracking;
+
+public class N_QueenProb 
+{
+	public static void printSolution(int[][] board, int n)
+	{
+		for (int i = 0; i < n; i++) 
+		{
+			for (int j = 0; j < n; j++) 
+			{
+				System.out.print(board[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static boolean isSafe(int [][]board, int row, int coloumn, int n)
+	{
+		int i,j;
+		
+		// Check on the left block of  row
+		for(i = 0; i < coloumn; i++)
+		{
+			if(board[row][i] == 1)
+			{
+				return false;
+			}
+		}
+		
+		//check for the upper diagonal in left direction 
+		for(i = row, j = coloumn; i >= 0  && j >=0;i--, j--)
+		{
+			if(board[i][j] == 1)
+			{
+				return false;
+			}
+		}
+		// check for the lower diagonal in left direction
+		
+		for(i = row, j = coloumn; i < n && j>=0; i++, j--)
+		{
+			if(board[i][j] == 1)
+			{
+				return false;
+			}
+		}
+		// all condiion is safe then return true
+		
+		return true;
+	}
+	
+	
+	//function to olve n queen problem
+	
+	public static boolean solved_N_Queen(int[][] board, int coloumn, int n)
+	{
+		// Base case - if you have placed all the quees then return true
+		if(coloumn >= n)
+		{
+			return true;
+		}
+		
+		for (int i = 0; i < n; i++) 
+		{
+			if(isSafe(board, i, coloumn, n) == true)
+			{
+				// place the queen in a board
+				board[i][coloumn] = 1;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

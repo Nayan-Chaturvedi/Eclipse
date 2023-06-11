@@ -1,0 +1,59 @@
+package backtracking;
+
+public class N_QueenProb 
+{
+	public static boolean isSafe(int board[][], int row, int coloumn, int length)
+	{
+		int i,j;
+		
+		for(i = 0; i < length; i++)
+		{
+			if(board[i][coloumn] == 1)
+			{
+				return false;
+			}
+		}
+		
+		for(i = row, j = coloumn; i >= 0 && j >= 0; i--, j--)
+		{
+			if(board[i][j] == 1)
+			{
+				return false;
+			}
+		}
+		
+		for(i = row, j = coloumn; i >=0 && j < length; i--, j++)
+		{
+			if(board[i][j] == 1)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	public static boolean nQueen(int board[][], int row, int n)
+	{
+		if(row == n)
+		{
+			return true;
+		}
+		
+		for(int coloumn = 0; coloumn < n; coloumn++)
+		{
+			if((isSafe(board, row, coloumn, n)) == true)
+			{
+				board[row][coloumn] = 1;
+				if(nQueen(board, row+1, n) == true);
+				{
+					return true;
+				}
+				board[row][coloumn] = 0;
+			}
+		}		
+		return false;
+	}
+	public static void main(String[] args) 
+	{
+		
+	}
+}

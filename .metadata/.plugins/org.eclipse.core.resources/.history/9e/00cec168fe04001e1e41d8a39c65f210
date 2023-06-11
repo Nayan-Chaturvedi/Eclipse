@@ -1,0 +1,15 @@
+package map;
+
+import java.util.*;
+public class Map {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap hs=new HashMap();
+		HashTable ht =new HashTable();
+		LinkedHashMap lsm=new LinkedHashMap();
+		TreeMap tm=new TreeMap();
+		
+	}
+
+}

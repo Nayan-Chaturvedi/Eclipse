@@ -1,5 +1,5 @@
 package recursion;
-
+ 
 import java.util.Scanner;
 
 public class A_Power_B_OptimizeApproch {
