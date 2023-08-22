@@ -22,7 +22,7 @@ public class ConstructorOfString {
 		String s4=new String(b);
 		System.out.println(s4);
 		
-		String s5=new String();
+		String s5=new String(); // Empty 
 		System.out.println("S5 is " + s5);
 
 		
