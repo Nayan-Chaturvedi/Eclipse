@@ -3,25 +3,24 @@ package rough1;
 class Queue
 {
 	int x;
-	boolean flag=false;
+	boolean flag= false;
 	
-	public synchronized void setData(int x)
+	public synchronized void get(int x)
 	{
 		try
 		{
 			if(flag==true)
 			{
-				
 				wait();	
 			}
 			else
 			{
 				this.x=x;
-				System.out.println("I produce value " + x);
+				System.out.println("I have Produce value " + x);
 				flag=true;
 				notify();
 			}
-		
+			
 		}
 		catch(Exception e)
 		{
@@ -29,7 +28,7 @@ class Queue
 		}
 	}
 	
-	public synchronized void getData()
+	synchronized public void set()
 	{
 		try
 		{
@@ -39,18 +38,17 @@ class Queue
 			}
 			else
 			{
-				System.out.println("I consume value " + x);
+				System.out.println("I have Consume value "+ x);
 				flag=false;
 				notify();
 			}
+
 		}
 		catch(Exception e)
 		{
 			System.out.println("Error Occur");
 		}
 	}
-	
-	
 }
 class Producer extends Thread
 {
@@ -63,13 +61,12 @@ class Producer extends Thread
 	
 	public void run()
 	{
-		int i=1;
+		int i=0;
 		while(true)
 		{
-			q.setData(i++);
+			q.get(++i);
 		}
-	}
-	
+	}	
 }
 
 class Consumer extends Thread
@@ -85,10 +82,11 @@ class Consumer extends Thread
 	{
 		while(true)
 		{
-			q.getData();
+			q.set();
 		}
 	}
 }
+
 class Rough__1
 {
 	public static void main(String[] args) 
