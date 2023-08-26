@@ -27,6 +27,8 @@ public class ArrayDeque_
 		
 		dq.offerFirst(5);
 		
+//		dq.add(null); // NullPointerException -- Null value  is Not  alloowed
+		
 		System.out.println(dq); // [5, 10, 20, 30]
 		
 	}
