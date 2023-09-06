@@ -1,108 +1,30 @@
 package rough1;
 
-import java.util.Scanner;
+import java.util.*;
 
-class Queue
+class Gen<T>
 {
-	int x;
-	Boolean flag=false;
+	T obj;
 	
-	 synchronized public void produceData(int x)
+	Gen(T obj)
 	{
-		try
-		{
-			if(flag==true)
-			{
-				wait();
-			}
-			else
-			{
-				this.x=x;
-				System.out.println("I have produce " + x);
-				flag=true;
-				notify();
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println("Error Occur");
-		}
+		this.obj=obj;
 	}
 	
-	synchronized public void consumeData()
+	public void dis()
 	{
-		try
-		{
-			if(flag==false)
-			{
-				wait();
-			}
-			else
-			{
-				System.out.println("I have consume " + x);
-				flag=false;
-				notify();
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println("Error Occur");
-		}
-	}
-}
- 
-class Producer extends Thread
-{
-	Queue q;
-	
-	Producer(Queue q)
-	{
-		this.q=q;
-	}
-	
-	public void run()
-	{
-		int i=0;
-		while(i<15)
-		{
-			q.produceData(i++);
-			i++;
-		}
-	}
-	
-	
-}
-
-class Consumer extends Thread
-{
-	Queue q;
-	
-	Consumer(Queue q)
-	{
-		this.q=q;
-	}
-	
-	public void run()
-	{
-		int i=0;
-		while(i<15)
-		{
-			q.consumeData();
-			i++;
-		}
+		System.out.println(obj.getClass().getName());
 	}
 }
 class Rough__1
 {
 	public static void main(String[] args)
 	{
-		Queue q=new Queue();
-		Producer p=new Producer(q);
-		Consumer c=new Consumer(q);
+		Gen<Integer> g1=new Gen<>(10);
+		g1.dis();
 		
-		p.start();
-		c.start();
-		
+		Gen<String> g2=new Gen<>("Nayan");
+		g2.dis();
 		
 	}
 }

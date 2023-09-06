@@ -2,10 +2,11 @@ package generic;
 
 import java.util.*;
 
-public class CollectionClass {
+public class CollectionClass // Collection(I) is different and Collection(C) is different
+{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		ArrayList al=new ArrayList();
 		
 		al.add(10);
@@ -15,7 +16,10 @@ public class CollectionClass {
 		
 		System.out.println(al);
 		
-		Collections.sort(al);
+		// Collection class me sabhi method static hote hai
+		//  static method invoke = className.methodName 
+		
+		Collections.sort(al); // [10, 21, 125, 200]
 		
 		System.out.println("Collection class me sorting method invoke : "+al);
 		
@@ -33,7 +37,7 @@ public class CollectionClass {
 		
 		Collections.sort(al1);
 		
-		System.out.println(al1);
+		System.out.println(al1);  // [Chaturvedi, Kumar, Learn, Nayan]
 		
 		
 		System.out.println("*******");
@@ -48,13 +52,13 @@ public class CollectionClass {
 		
 		int index =Collections.binarySearch(al3, 35);
 		
-		System.out.println("Index is : " + index);
+		System.out.println("Index is : " + index); // 3
 		
-		Collections.rotate(al3, 3);
+		Collections.rotate(al3, 3); // [30, 35, 37, 10, 20]
+
+		System.out.println(al3); 
 		
-		System.out.println(al3);
-		
-		Collections.reverse(al3);
+		Collections.reverse(al3); // // [20, 10, 37, 35, 30]
 		
 		System.out.println(al3);
 		
@@ -63,7 +67,7 @@ public class CollectionClass {
 		
 		System.out.println(al3);
 		
-		System.out.println(Collections.frequency(al3, 30));
+		System.out.println(Collections.frequency(al3, 30)); // 1
 		
 		
 		
