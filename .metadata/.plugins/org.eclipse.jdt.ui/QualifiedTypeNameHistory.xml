@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
-    <fullyQualifiedTypeName name="java.math.BigInteger"/>
-    <fullyQualifiedTypeName name="com.sun.jdi.Value"/>
-    <fullyQualifiedTypeName name="projectATM.AtmOperationInterface"/>
-    <fullyQualifiedTypeName name="projectATM.AtmOperationImplement"/>
-    <fullyQualifiedTypeName name="projectATM.ATM"/>
-    <fullyQualifiedTypeName name="map.Student"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="rough.Student"/>
-    <fullyQualifiedTypeName name="java.util.Hashtable"/>
-    <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="java.util.TreeMap"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.WeakHashMap"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="rough.Generics"/>
     <fullyQualifiedTypeName name="rough.Generic"/>
@@ -34,7 +21,6 @@
     <fullyQualifiedTypeName name="rough1.StudentID"/>
     <fullyQualifiedTypeName name="rough1.College"/>
     <fullyQualifiedTypeName name="rough1.Demo"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
     <fullyQualifiedTypeName name="collections.ArrayList_"/>
     <fullyQualifiedTypeName name="rough1.Enjoy"/>
@@ -50,14 +36,28 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="extra_.Animal"/>
     <fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
     <fullyQualifiedTypeName name="generic.Student"/>
     <fullyQualifiedTypeName name="generic.Student12"/>
     <fullyQualifiedTypeName name="generic.Aeroplane"/>
-    <fullyQualifiedTypeName name="rough1.Student"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
     <fullyQualifiedTypeName name="generic.Alpha"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="generic.Employee"/>
+    <fullyQualifiedTypeName name="java.util.WeakHashMap"/>
+    <fullyQualifiedTypeName name="rough1.Student"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.sql.DataTruncation"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.time.LocalTime"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="rough1.my"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.util.function.Consumer"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
 </qualifiedTypeNameHistroy>
