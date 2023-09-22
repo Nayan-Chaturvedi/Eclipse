@@ -1,10 +1,28 @@
 package rough1;
 
-public class Rougj_1 {
+import java.io.*;
+import java.util.Arrays;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.*;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class Rougj_1
+{
 
+	public static void main(String[] args) throws IOException 
+	{
+		ArrayList al=new ArrayList();
+		al.add(21);
+		al.add(23);
+		al.add("Amit");
+		al.add('V');
+		
+		ListIterator li=al.listIterator(al.size());
+		while(li.hasPrevious())
+		{
+			System.out.println(li.previous());
+		}
+		
+		
 	}
 
 }

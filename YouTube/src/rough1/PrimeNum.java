@@ -1,5 +1,6 @@
 package rough1;
 
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class PrimeNum {
@@ -30,6 +31,7 @@ public class PrimeNum {
 				System.out.print(i + " ");	
 			}
 		}
+		
 	}
 
 }
