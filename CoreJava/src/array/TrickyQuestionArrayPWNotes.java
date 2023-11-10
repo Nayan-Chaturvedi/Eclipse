@@ -42,8 +42,9 @@ public class TrickyQuestionArrayPWNotes {
 		{
 			for(int y:z)
 			{
-				System.out.println(y);
+				System.out.print(y+" ");
 			}
+			System.out.println();
 		}
 		
 		

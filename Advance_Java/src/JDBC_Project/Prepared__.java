@@ -32,26 +32,20 @@ class Operation
 		case 1:
 			{
 				System.out.println("\n You choose : " +operation+" \n");
-				String query ="SELECT * FROM electricityBill.cst WHERE id=?";
+				String query ="SELECT * FROM electricityBill.cst ";
 				ps=c.prepareStatement(query);
-				System.out.println("Enter an ID you want");
-				int id=sc.nextInt();
-				ps.setInt(1, id);
+				
 				if(ps!=null)
 				{
 					ResultSet rs=ps.executeQuery();
 					if(rs!=null)
 					{
-						if(rs.next())
+						System.out.println("ID\t NAME \n");
+						while(rs.next())
 						{
-							System.out.println("ID : " +rs.getInt(1) +"\t NAME : "+rs.getString(2));
-						}
-						else
-						{
-							System.out.println("No row Available ");
+							System.out.println(rs.getInt(1)+"   :	"+rs.getString(2));
 						}
 					}
-					
 				}
 			}
 			
@@ -168,6 +162,18 @@ public class Prepared__
 		catch(Exception e)
 		{
 			System.out.println("Error Occur");
+		}
+		
+		finally
+		{
+			try
+			{
+				Load_Register.clConnection1(op.ps, op.c);
+			}
+			catch(Exception e)
+			{
+				System.out.println("Eroor Occur in close Connectio");
+			}
 		}
 	}
 }
