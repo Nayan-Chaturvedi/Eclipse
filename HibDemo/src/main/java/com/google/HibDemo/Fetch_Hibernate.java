@@ -10,7 +10,7 @@ public class Fetch_Hibernate {
 		
 		Config conf=new Config();
 		Session s=conf.getSession();
-		m=s.get(Mall.class, 103);
+		m=s.get(Mall.class, 107);
 		System.out.println(m);
 		s.close();
 
