@@ -2,7 +2,7 @@ package API;
 
 import java.lang.annotation.*;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.TYPE )
 @Retention(RetentionPolicy.RUNTIME)
 @interface CricketPlayer
 {

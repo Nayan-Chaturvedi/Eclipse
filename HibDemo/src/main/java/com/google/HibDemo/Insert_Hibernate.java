@@ -10,8 +10,8 @@ public class Insert_Hibernate
     public static void main( String[] args )
     {
        Mall m=new Mall();
-       m.setShopNum(107);
-       m.setShopName("Apple_Store");
+       m.setShopNum(109);
+       m.setShopName("ore");
        
        Config conf=new Config();
        Session s=conf.getSession();

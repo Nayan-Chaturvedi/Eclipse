@@ -8,6 +8,8 @@ public class Caching_Level_2 {
 	{
 //		Some Issue in this code
 //		This code have some issue
+		
+		
 		Mall m1=null;
 		Mall m2=null;
 		
