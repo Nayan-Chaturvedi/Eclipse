@@ -31,11 +31,17 @@ public class Main {
 		ans3.setAnswerId(203);
 		ans3.setAns("Database_Management_System");
 		
-		//			MAPPING
+		//			MAPPING (UNI-DIRECTIONAL)
 		
 		ques1.setAnswer(ans1);
 		ques2.setAnswer(ans2);
 		ques3.setAnswer(ans3);
+		
+		//			MAPPING(BI-DIRECTIONAL)
+		
+		ans1.setQuestion(ques1);
+		ans2.setQuestion(ques2);
+		ans3.setQuestion(ques3);
 		
 		
 		EntityManagerFactory emf=Persistence.createEntityManagerFactory("PersistenceUnit2_Mapping");
@@ -54,6 +60,10 @@ public class Main {
 		System.out.println(ques1);
 		System.out.println(ques2);
 		System.out.println(ques3);
+		
+		System.out.println(ans1);
+		System.out.println(ans2);
+		System.out.println(ans3);
 		
 		
 	}

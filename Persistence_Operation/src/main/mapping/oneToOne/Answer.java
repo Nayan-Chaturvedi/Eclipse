@@ -13,7 +13,19 @@ public class Answer
 	private int answerId;
 	@Column(name = "Ans")
 	private String ans;
+	@OneToOne
+	private Question question;
 	
+
+	public Question getQuestion() 
+	{
+		return question;
+	}
+
+	public void setQuestion(Question question)
+	{
+		this.question = question;
+	}
 
 	public int getAnswerId()
 	{
@@ -35,12 +47,14 @@ public class Answer
 		this.ans = ans;
 	}
 
-	@Override
-	public String toString() 
-	{
-		return "Answer [answerId=" + answerId + ", ans=" + ans + "]";
-	}
+	 @Override
+	 public String toString() {
+	     return "Answer [answerId=" + answerId + ", ans=" + ans + "]";
+	 }
 	
+
+	
+
 	
 	
 	
