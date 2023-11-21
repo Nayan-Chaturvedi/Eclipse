@@ -17,6 +17,7 @@
 	<classpathentry kind="src" path="src/main/Enumerated"/>
 	<classpathentry kind="src" path="src/main/mapping"/>
 	<classpathentry kind="src" path="src/main/OneToMany"/>
+	<classpathentry kind="src" path="src/main/ManyToMany"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

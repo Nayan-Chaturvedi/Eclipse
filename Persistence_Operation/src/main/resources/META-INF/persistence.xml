@@ -93,5 +93,30 @@
         </properties>
 
     </persistence-unit>
+    
+    
+    <persistence-unit name="PersistenceUnit_ManyoMany" transaction-type="RESOURCE_LOCAL">
+        
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        
+      <class>manyToMany.Student</class>
+            <class>manyToMany.Teacher</class>
+       
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/Persistence" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="nayan123@" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+           <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+        </properties>
+
+    </persistence-unit>
 
 </persistence>

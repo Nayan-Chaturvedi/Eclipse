@@ -14,7 +14,7 @@ public class HondaComp
 	@Id
 	private int productId;
 	private String productName;
-	@OneToMany(mappedBy = "hCompany")
+
 	
 	private List<Car> car;
 	
