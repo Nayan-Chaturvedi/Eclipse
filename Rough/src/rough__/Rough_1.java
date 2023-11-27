@@ -1,74 +1,103 @@
 package rough__;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-
-class SerialNum implements Serializable
+class Queue
 {
-	//public static final long serialVersionUID=1212L;
-	transient final private int age=10;
-	private String name;
+	int num;
+	boolean flag=false;
 	
-//	public void setAge(int age)
-//	{
-//		this.age=age;
-//	}
-//	
-//	public int getAge()
-//	{
-//		return age;
-//	}
-	
-	public void setName(String name)
+	  synchronized public void produce(int num)
 	{
-		this.name=name;
+		try
+		{
+			if(flag==true)
+			{
+				wait();
+			}
+			else
+			{
+				this.num=num;
+				System.out.println("Producer produce : " +num);
+				flag=true;
+				notify();
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception Occur");
+		}
+		
 	}
 	
-	@Override
-	public String toString()
+	synchronized public void consume()
 	{
-		return "Serial_Number [ age : "+age +"| Name : "+name +" ]";
-	}
-	
-	public void play()
-	{
-		System.out.println("Hi... I'm Nayan");
+		try
+		{
+			if(flag==false)
+			{
+				wait();
+			}
+			else
+			{
+				System.out.println("Consume : " +num);
+				flag=false;
+				notify();
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception occur");
+		}
+		
 	}
 }
 
-public class Rough_1 
+class Consumer extends Thread
 {
-	 public static void main(String args[]) throws Exception 
-	 {
-//		 SerialNum sn=new SerialNum();
-//		// sn.setAge(23);
-//		 sn.setName("Priya");
-//		 System.out.println(sn);
-//		 
-//		 FileOutputStream fos=new FileOutputStream("D:\\Rough\\itr.Java");
-//		 BufferedOutputStream bos=new BufferedOutputStream(fos);
-//		 ObjectOutputStream oos=new ObjectOutputStream(bos);
-//		 
-//		 oos.writeObject(sn);
-//		 oos.close();
-//		 
-//		 System.out.println(sn);
-		 
-		 
-		 FileInputStream fis=new FileInputStream("D:\\Rough\\itr.Java");
-		 BufferedInputStream bis=new BufferedInputStream(fis);
-		 ObjectInputStream ois=new ObjectInputStream(bis);
-//		 Object obj=ois.readObject();
-		 SerialNum sn=(SerialNum) ois.readObject();
-		 sn.play();
-		 System.out.println(sn);
-		 
+	Queue q;
 	
-
-	 }
+	Consumer(Queue q)
+	{
+		this.q=q;
+	}
+	
+	public void run()
+	{
+		int num=1;
+		while(num<15)
+		{
+			q.consume();
+			num++;
+		}
+	}
+}
+class Producer extends Thread
+{
+	Queue q;
+	
+	Producer(Queue q)
+	{
+		this.q=q;
+	}
+	
+	public void run()
+	{
+		int num=1;
+		while(num<15)
+		{
+			q.produce(num);
+			num++;
+		}
+	}
+}
+public class Rough_1
+{
+	public static void main(String[] args) 
+	{
+		Queue q=new Queue();
+		Producer p=new Producer(q);
+		Consumer c=new Consumer(q);
+		
+		p.start();
+		c.start();
+	}
 }
