@@ -17,7 +17,8 @@ public class MvcConfiguration implements WebMvcConfigurer
 {
 
 	@Bean
-	public ViewResolver getViewResolver(){
+	public ViewResolver getViewResolver()
+	{
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
@@ -25,7 +26,8 @@ public class MvcConfiguration implements WebMvcConfigurer
 	}
 	
 	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	public void addResourceHandlers(ResourceHandlerRegistry registry)
+	{
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
